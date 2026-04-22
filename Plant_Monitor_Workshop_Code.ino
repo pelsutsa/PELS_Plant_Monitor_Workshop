@@ -7,12 +7,11 @@
 #define OLED_RESET -1
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-//Could be AC instead of A0
-#define SOIL_PIN A0
+#define SOIL_PIN A0   // AC check the nano
 
 // Calibration
-int dryValue = 800; // changes based on the plant (Dry)
-int wetValue = 300; //changes based on plant (Wet)
+int dryValue = 800; //approximated values
+int wetValue = 300; //approximated values
 
 // Blink timing
 unsigned long lastBlink = 0;
@@ -28,7 +27,7 @@ void setup() {
   }
 
   display.clearDisplay();
-  display.display();
+  display.display(); 
 }
 
 void loop() {
@@ -36,9 +35,9 @@ void loop() {
   // 850 = very dry -> sad
   // 550 = medium -> okay
   // 300 = wet -> happy
-  //int rawValue = 300;
+  int rawValue = 800;
 
-  int rawValue = analogRead(SOIL_PIN);
+  //int rawValue = analogRead(SOIL_PIN);
 
   int moisturePercent = map(rawValue, dryValue, wetValue, 0, 100);
   moisturePercent = constrain(moisturePercent, 0, 100);
@@ -94,7 +93,7 @@ void drawScreen(int percent, int mood, int rawValue) {
   }
 
   display.setCursor(0, 54);
-  display.print("Raw:");
+  display.print("Value:");
   display.print(rawValue);
 
   drawCuteFlower(76, 2, mood, eyesOpen);
