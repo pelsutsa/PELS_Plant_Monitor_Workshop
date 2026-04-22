@@ -7,11 +7,12 @@
 #define OLED_RESET -1
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-#define SOIL_PIN A0   // Nano clone may label this AC
+//Could be AC instead of A0
+#define SOIL_PIN A0
 
 // Calibration
-int dryValue = 800;
-int wetValue = 300;
+int dryValue = 800; // changes based on the plant (Dry)
+int wetValue = 300; //changes based on plant (Wet)
 
 // Blink timing
 unsigned long lastBlink = 0;
