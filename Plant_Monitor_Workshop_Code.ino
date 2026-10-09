@@ -145,17 +145,17 @@ void drawCuteFlower(int x, int y, int mood, bool eyesOpen) {
 
   // mouth
   if (mood == 0) {
-    // SAD: upside-down curve
+    // SAD
     display.drawPixel(fx - 3, fy + 5, SSD1306_BLACK);
     display.drawLine (fx - 2, fy + 4, fx + 2, fy + 4, SSD1306_BLACK);
     display.drawPixel(fx + 3, fy + 5, SSD1306_BLACK);
   } 
   else if (mood == 1) {
-    // OKAY: flat mouth
+    // OKAY
     display.drawLine(fx - 3, fy + 5, fx + 3, fy + 5, SSD1306_BLACK);
   } 
   else {
-    // HAPPY: smile
+    // HAPPY
     display.drawPixel(fx - 3, fy + 4, SSD1306_BLACK);
     display.drawLine (fx - 2, fy + 5, fx + 2, fy + 5, SSD1306_BLACK);
     display.drawPixel(fx + 3, fy + 4, SSD1306_BLACK);
