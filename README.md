@@ -1,4 +1,4 @@
-# PELS_Plant_Monitor_Workshop
+# PELS Plant Monitor Workshop
 
 This Arduino project uses a soil moisture sensor and an OLED display to show the current moisture level of a plant. The display includes an animated flower face that changes mood depending on how dry or wet the soil is.
 
